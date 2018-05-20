@@ -123,21 +123,21 @@ class IncomTaxCalculator(object):
       
         
         
-def export(default='out.csv',queue2):
+def export(default,queue2):
     result = queue2.get()
-        with open(default,'w') as f:
-            writer = csv.writer(f)
-            writer.writerows(result)
+    with open(default,'w') as f:
+        writer = csv.writer(f)
+        writer.writerows(result)
 
                 
-def main():
+def main(userfile,confidgict,outfile):
     queue1 = Queue()
     queue2 = Queue()
     userdata = UserData(userfile)
     calculator = IncomTaxCalculator(configdict)
-    Process.(target = userdata.read_users_data,args=(queue1,)).start()
-    Process.(target = calculator.calc_for_all_userdata,args=(queue1,queue2)).start()
-    Process.(target =  export,args=(outfile,queue2)).start()    
+    Process(target = userdata.read_users_data,args=(queue1,)).start()
+    Process(target = calculator.calc_for_all_userdata,args=(queue1,queue2)).start()
+    Process(target = export, args=(outfile,queue2)).start()    
     
     
     
@@ -152,8 +152,9 @@ if __name__ == '__main__':
         print("{}Not found file".format(configfile()))
         sys.exit(-1)
     if os.path.exists(userfile):
-       main()
+       main(userfile,configdict,outfile)
     else:
         print("{} Not found file".format(userfile))
         sys.exit(-1)
+
 

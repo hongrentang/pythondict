@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block header %}
+    <h1> this is content </h1>
+{% endblock%}
+{% block contener %}
+<div>
+    <h3>title: {{ content.title }}</h3>
+    <span>{{ content.created_time}}</span>
+    <p>{{ content.content }}</p>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block contener %}
+  {% for file in data %}
+  <li>
+  <a href = {{ url_for('file',id = file.id)}}> {{ file.title }}</a>
+  {% for tag in file.tags %}
+    <span> {{ tag }}</span>
+  {% endfor%}
+  </li>
+  {% endfor %}
+{% endblock%}

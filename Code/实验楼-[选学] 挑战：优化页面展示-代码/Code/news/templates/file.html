@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block contener %}
+<div>
+    <h3>{{ content.title }}</h3>
+    <span>{{ content.created_time}}</span>
+    <p class="navbar-text">{{ content.content }}</p>
+</div>
+{% endblock %}

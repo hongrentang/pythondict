@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block contener %}
+<ul class="list-group">
+  {% for file in data %}
+	  <li class="list-grou-item">
+		  <a href = {{ url_for('file',id = file.id)}}> <h3>{{ file.title }} </h3></a>
+		  {% for tag in file.tags %}
+			<span class="label label-primary"> {{ tag }}</span>
+		  {% endfor%}
+	  </li>
+  {% endfor %}
+</ul>
+{% endblock%}

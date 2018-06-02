@@ -2,7 +2,9 @@
 from openpyxl import load_workbook
 from openpyxl import Workbook
 import datetime
-
+'''
+将exle表中的数据存入列表
+'''
 def data_value(data):
     data_list = []
     for line in data:
@@ -12,6 +14,9 @@ def data_value(data):
         data_list.append(line_list)
     return data_list
 
+'''
+合并两表数据
+'''    
 def Data_merging(students_list,time_list):
     data = []
     for i in students_list:

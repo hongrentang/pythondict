@@ -8,11 +8,15 @@
 import scrapy
 
 
-class BaiduItem(scrapy.Item):
+class DoubanMovieItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    #url = scrapy.Field()
     pass
 
-class PageItem(scrapy.Item):
+
+class MovieItem(scrapy.Item):
     url = scrapy.Field()
+    name = scrapy.Field()
+    summary = scrapy.Field()
+    score = scrapy.Field()
+

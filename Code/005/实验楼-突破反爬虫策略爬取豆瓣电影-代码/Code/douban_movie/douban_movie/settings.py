@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for baidu project
+# Scrapy settings for douban_movie project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'baidu'
+BOT_NAME = 'douban_movie'
 
-SPIDER_MODULES = ['baidu.spiders']
-NEWSPIDER_MODULE = 'baidu.spiders'
+SPIDER_MODULES = ['douban_movie.spiders']
+NEWSPIDER_MODULE = 'douban_movie.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'baidu (+http://www.yourdomain.com)'
+#USER_AGENT = 'douban_movie (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -27,13 +27,13 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -47,14 +47,14 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'baidu.middlewares.BaiduSpiderMiddleware': 543,
+#    'douban_movie.middlewares.DoubanMovieSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-#    'baidu.middlewares.MyCustomDownloaderMiddleware': 543,
-     'baidu.middlewares.UserAgentMiddleware':400
+    'douban_movie.middlewares.MyCustomDownloaderMiddleware': None,
+    'douban_movie.middlewares.UserAgentMiddleware': 400,
 }
 
 # Enable or disable extensions
@@ -66,7 +66,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'baidu.pipelines.BaiduPipeline': 300,
+    'douban_movie.pipelines.DoubanMoviePipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
